@@ -1,9 +1,16 @@
-import { useEffect, useState } from 'react'
-import logo from './logo.svg'
+import { useEffect, useState, useContext } from 'react'
 import './App.css'
+import ShinCodeContext from './main';
+
 
 function App() {
   const [count, setCount] = useState(0);
+  /*
+    useContextで呼び出すことで
+    valueに指定したデータを使用することができる
+  */
+  const shincodeInfo = useContext(ShinCodeContext);
+
   const handleClick = () => {
     setCount(count => count + 1 );
     
@@ -20,9 +27,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>UseState, UseEffect</h1>
+      <h1>useState, useEffect</h1>
       <button onClick={handleClick}>+</button>
       <p>{count}</p>
+
+      <hr />
+      <h1>useContext</h1>
+      <p>{shincodeInfo.name}</p>
+      <p>{shincodeInfo.age}</p>
     </div>
   )
 }
