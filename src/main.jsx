@@ -4,7 +4,7 @@ import App from './App'
 import './index.css'
 
 /*
-  useContext
+  useContext[ログインしているかどうかの情報を持たせたりする]
   ①グローバルなデータを用意(shincodeInfo)
   ②providerで全体をラップする
   ③valueで共有したいデータを指定
